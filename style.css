@@ -1,0 +1,134 @@
+*{
+      font-family: Arial, sans-serif;
+}
+body{
+    background-color: #fee4e4;
+    margin: 0;
+    padding: 0;
+  
+}
+main{   
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 1068px;
+    margin: auto;
+} 
+header{
+        background-color: #f8f8f8;
+        width: 1000px;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+
+}
+ul{
+    display: flex;
+    justify-content: center;
+
+}ul li{
+    list-style-type: none;
+}
+ul li a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+
+}
+.events-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 10px;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 2px;
+    font-size: 18px;
+}
+.events-list li{
+    list-style: none;
+    
+}
+h1,h3{
+    text-align: center;
+}
+li a:hover{
+    background-color: #f0f0f0;
+}
+.menu-rozwijane{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+}
+.menu-rozwijane li{
+    list-style: none;
+}
+.menu-rozwijane summary{
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+.menu-rozwijane details ul{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    min-width: 180px;
+    margin: 0;
+    padding: 5px 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.menu-rozwijane details ul li a{
+    display: block;
+    font-size: 16px;
+}
+.search-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 24px;
+    background-color: #fff8f8;
+    border: 1px solid #f3dada;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+.search-form label{
+    color: #333;
+    font-weight: bold;
+}
+.search-form input,
+.search-form button{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #d8bebe;
+    border-radius: 5px;
+}
+.search-form input:focus{
+    outline: 2px solid #e8bcbc;
+    border-color: #c98f8f;
+}
+.search-form button{
+    cursor: pointer;
+    margin-top: 8px;
+    background-color: #fee4e4;
+    color: #333;
+    font-weight: bold;
+}
+.search-form button:hover{
+    background-color: #f8d2d2;
+}
