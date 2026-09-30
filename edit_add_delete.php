@@ -28,7 +28,6 @@
                             <li><a href="wydarzenia.php">Lista</a></li>
                             <li><a href="events/add.php">Dodawanie</a></li>
                             <li><a href="events/edit.php">Edycja</a></li>
-                            <li><a href="events/delete.php">Usuwanie</a></li>
                         </ul>
                     </details>
                 </li>
