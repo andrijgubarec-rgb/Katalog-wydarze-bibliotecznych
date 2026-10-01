@@ -43,7 +43,7 @@
             <label for="nazwa">Nazwa:</label>
             <input type="text" id="nazwa" name="nazwa" required>
             <label for="pojemność">Pojemność:</label>
-            <input type="number" id="pojemność" name="pojemność" required>
+            <input type="number" id="pojemnosc" name="pojemnosc" required>
             <label for="lokalizacja">Lokalizacja:</label>
             <input type="text" id="lokalizacja" name="lokalizacja" required>
             <button type="submit">Dodaj salę</button>
@@ -51,7 +51,7 @@
         <?php 
          if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nazwa = trim($_POST['nazwa'] ?? "");
-            $pojemnosc = (int)($_POST['pojemność'] ?? 0);
+            $pojemnosc = (int)($_POST['pojemnosc'] ?? 0);
             $lokalizacja = trim($_POST['lokalizacja'] ?? "");
             if ($nazwa !== "" && $pojemnosc > 0 && $lokalizacja !== "" && add_room($conn, $nazwa, $pojemnosc, $lokalizacja)) {
                 echo "<p class='form-message success'>Sala została dodana pomyślnie.</p>";
