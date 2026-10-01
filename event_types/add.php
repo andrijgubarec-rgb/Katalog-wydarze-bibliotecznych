@@ -1,3 +1,24 @@
+<?php
+require_once "../config.php";
+require_once "../db.php";   
+
+$conn = connectDB(); 
+function addEventType($conn, $name) {
+    $stmt = mysqli_prepare($conn, "INSERT INTO event_types (name) VALUES (?)");
+    if ($stmt === false) {
+        die("Nie udało się przygotować dodawania typu wydarzenia: " . mysqli_error($conn));
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $name);
+    if (!mysqli_stmt_execute($stmt)) {
+        die("Nie udało się dodać typu wydarzenia: " . mysqli_stmt_error($stmt));
+    }
+
+    mysqli_stmt_close($stmt);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -19,5 +40,21 @@
             </nav>
         </header>
     </main>
+    <form  method="post" class="event-form">
+        <label for="name">Nazwa typu wydarzenia:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Dodaj typ wydarzenia</button>
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $name = trim($_POST["name"]);
+            if (!empty($name)) {
+                addEventType($conn, $name);
+                echo "<p class='form-message success'>Typ wydarzenia został dodany.</p>";
+            } else {
+                echo "<p class='form-message error'>Nazwa typu wydarzenia nie może być pusta.</p>";
+            }
+        }
+        ?>
+    </form>
 </body>
 </html>
